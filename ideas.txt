@@ -2,4 +2,3 @@ Image classifier
 Daily planner + budget planner
 Sex chatbot
 Pornstar identifier
-Brain control robot motor
