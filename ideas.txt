@@ -1,1 +1,2 @@
 Image classifier
+Daily planner + budget planner
