@@ -40,22 +40,32 @@ class SampleListener(Leap.Listener):
                 swipe = Leap.SwipeGesture(gesture)
                 if swipe.speed > 200:
                     #Right Swipe
+                    char = ""
                     if Leap.Vector(1,0,0).angle_to(swipe.direction) <  math.pi / 4 and (time.time() - lastRight) > 0.5:
                         print("R")
+                        char = "R"
                         lastRight = time.time()
                     #Left
                     if Leap.Vector(-1,0,0).angle_to(swipe.direction) <  math.pi / 4 and (time.time() - lastLeft) > 0.5:
                         print("L")
+                        char = "L"
                         lastLeft = time.time()
                     #Up
                     if Leap.Vector(0,1,0).angle_to(swipe.direction) <  math.pi / 4 and (time.time() - lastUp) > 0.5:
                         print("U")
+                        char = "U"
                         lastUp = time.time()
                     if Leap.Vector(0,-1,0).angle_to(swipe.direction) <  math.pi / 4 and (time.time() - lastDown) > 0.5:
                         print("D")
+                        char = "D"
                         lastDown = time.time()
+                    if char != "":
+                        with open("dataDump.txt", mode="a") as file:
+                            file.write(char+"\n")
+                        
 
                     #print("X: {0} Y: {1} Z: {2}".format(str(swipe.direction.x), str(swipe.direction.y), str(swipe.direction.z)))
 
-
-main()
+if __name__ == '__main__':
+    while True:
+        main()
