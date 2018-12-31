@@ -1,6 +1,4 @@
 Image classifier
 Daily planner + budget planner
-Sex chatbot
-Pornstar identifier
 Add Gesture Controls to amazon echo.
 Facial Recognition to trigger Door unlocking. (or similar)
